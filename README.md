@@ -1,3 +1,4 @@
+ATTENTION: *** the project is not working NOW, still debugging ***
 tianapi2cow是chatgpt-on-wechat的下游分支，适用于chatgpt-on-wechat 的新闻资讯类的插件，目前可调用天聚数行的API接口获取（IT）行业资讯/科技新闻/人工智能/科学探索/互联网资讯 纯文字版的新闻资讯。
 
 该插件使用起来非常容易，只需按以下步骤简单操作即可。
