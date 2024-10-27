@@ -2,11 +2,11 @@ import requests
 import json
 from datetime import datetime
 
-# @plugins.register(name="Tianapi2cow",
-#                  desc="获取天聚数行的API相关信息资讯",
-#                  version="alpha 1.0 ",
-#                  author="Antonio",
-#                  desire_priority=500)
+ @plugins.register(name="Tianapi2cow",
+                  desc="获取天聚数行的API相关信息资讯",
+                  version="alpha 1.0 ",
+                  author="Antonio",
+                  desire_priority=500)
 
 class TianapiFetcher:
     def __init__(self, config_path="config.json"):
