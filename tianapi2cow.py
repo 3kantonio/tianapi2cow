@@ -9,7 +9,7 @@ from datetime import datetime
 #                  desire_priority=500)
 
 class TianapiFetcher:
-    def __init__(self, config_path="tianapi/config.json"):
+    def __init__(self, config_path="config.json"):
         self.api_key = self.load_api_key(config_path)
 
     def load_api_key(self, filename="config.json"):
