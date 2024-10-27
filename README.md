@@ -1,4 +1,3 @@
-tianapi2cow
 tianapi2cow是一款适用于chatgpt-on-wechat 的新闻资讯类的插件，调用天聚数行的API接口获取带网页链接的文字版新闻资讯。
 
 该插件使用起来非常容易，只需按以下步骤简单操作即可。
