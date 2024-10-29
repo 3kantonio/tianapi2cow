@@ -1,14 +1,39 @@
 import requests
 import json
 from datetime import datetime
+import plugins
+from common.log import logger
+import plugins
+from bridge.context import ContextType
+from bridge.reply import Reply, ReplyType
+from plugins import *
+import config
+
 
  @plugins.register(name="Tianapi2cow",
                   desc="获取天聚数行的API相关信息资讯",
                   version="alpha 1.0 ",
                   author="Antonio",
-                  desire_priority=500)
+                  desire_priority=100)
 
-class TianapiFetcher:
+class TianapiFetcher(Plugin):
+   	def __init__(self):
+        super().__init__()
+        self.handlers[Event.ON_HANDLE_CONTEXT] = self.on_handle_context
+        logger.info(f"[{__class__.__name__}] initialized")
+		
+	def get_help_text(self, **kwargs):
+        return "输入“人工智能|行业资讯｜科技新闻｜科学探索｜互联网资讯”等关键字获取最新的相关资讯。"
+		
+	def on_handle_context(self, e_context):
+        if e_context['context'].type == ContextType.TEXT:
+            content = e_context["context"].content.strip()
+            # if content.startswith("人工智能"):
+			if content == "人工智能"
+                logger.info(f"[{__class__.__name__}] 收到消息: {content}")
+                self.fetch_and_parse_data(e_context)
+				
+
     def __init__(self, config_path="config.json"):
         self.api_key = self.load_api_key(config_path)
 
@@ -61,12 +86,6 @@ class TianapiFetcher:
         allnum = result.get("allnum", 0)
         news_list = result.get("newslist", [])
         
-        output_text = f"{user_input}资讯：{current_datetime}\n"
-        for i, news in enumerate(news_list, start=1):
-            output_text += (
-                f"\n{i}. {news.get('ctime')} - {news.get('title')} - {news.get('description')}\n"
-            )
-
         return output_text
 
     def get_news_by_category(self, category):
@@ -75,6 +94,19 @@ class TianapiFetcher:
             return self.fetch_and_parse_data(api_url)
         except Exception as e:
             return str(e)
+	
+	def construct_reply(self, newslist, e_context):
+        reply = Reply()
+        reply.type = ReplyType.TEXT
+        
+        # 构造回复内容
+        reply.content = f"📢 {user_input}最新资讯如下：{current_datetime}\n"
+        for i, news in enumerate(news_list, start=1):
+            output_text += (
+                f"\n{i}. {news.get('ctime')} - {news.get('title')} - {news.get('description')}\n"
+            )
+        e_context["reply"] = reply
+        e_context.action = EventAction.BREAK_PASS
 
 if __name__ == "__main__":
     fetcher = TianapiFetcher()
