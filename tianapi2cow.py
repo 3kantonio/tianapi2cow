@@ -68,7 +68,7 @@ class Tianapi2cow(Plugin):
             # 检查API返回的内容
             if data.get('code') == 200:
                if 'result' in data and 'newslist' in data['result']:
-                    self.construct_reply(data['result']['newslist'], e_context, header_text)
+                    self.construct_reply(data['result']['newslist'], e_context)
                 else:
                     logger.error(f"API返回格式不正确: {data}")
                     self.send_error_reply(e_context, "获取资讯失败，返回数据格式不正确。")
