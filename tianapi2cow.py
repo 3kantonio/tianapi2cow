@@ -8,11 +8,13 @@ from bridge.reply import Reply, ReplyType
 from plugins import *
 import config
 
-@plugins.register(name="Tianapi2cow",
-                  desc="获取AI、科技和科学探索相关的最新资讯",
+@plugins.register(
+                  name="Tianapi2cow",
+                  desc="A plugin that acquire tech news from tianapi",
                   version="alpha 1.0",
                   author="Antonio",
-                  desire_priority=100)
+                  desire_priority=100,
+		)
 class Tianapi2cow(Plugin):
     def __init__(self):
         super().__init__()
