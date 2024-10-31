@@ -66,7 +66,6 @@ class Tianapi2cow(Plugin):
             response.raise_for_status()
             data = response.json()
             # 检查API返回的内容
-	    current_datetime = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             if data.get('code') == 200:
                if 'result' in data and 'newslist' in data['result']:
                     self.construct_reply(data['result']['newslist'], e_context, header_text)
