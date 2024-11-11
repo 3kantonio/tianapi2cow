@@ -37,7 +37,7 @@ class Tianapi2cow(Plugin):
             return
 
         with open(config_path, 'r') as file:
-            api_key = json.load(file).get('TIAN_API_KEY', '')
+            api_key = json.load(file).get('API_KEY', '')
         
         if not api_key:
             logger.error("API key is missing in config.json")
