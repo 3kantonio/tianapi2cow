@@ -10,7 +10,7 @@ tianapi2cow是chatgpt-on-wechat的下游分支，适用于chatgpt-on-wechat 的�
 3.进行“申请接口”开通后，然后点击“在线测试”测试接口是否正常
 
 二. 安装插件和配置config文件
-1.在微信机器人聊天窗口输入命令：#installp https://github.com/3kantonio/tianapi2cow.git
+1.在微信机器人聊天窗口输入命令：#installp https://github.com/3kantonio/tianapi2cow.git 
 
 2.进入config文件配置第一步操作中获取的api key。
 
