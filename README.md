@@ -1,7 +1,7 @@
-ATTENTION: *** the project is not working, still debugging NOW ***
-tianapi2cow是chatgpt-on-wechat的下游分支，适用于chatgpt-on-wechat 的新闻资讯类的插件，目前可调用天聚数行的API接口获取（IT）行业资讯/科技新闻/人工智能/科学探索/互联网资讯 纯文字版的新闻资讯。
+tianapi2cow是chatgpt-on-wechat的下游分支，适用于chatgpt-on-wechat 的新闻资讯类的插件，目前可调用天聚数行的API接口获取 科学探索 纯文字版的新闻资讯。
 
-该插件使用起来非常容易，只需按以下步骤简单操作即可。
+该插件使用需按以下步骤简单操作。
+
 一. 获取TIAN_API_KEY并申请接口
 1.在天聚数行API接口网站注册账号并登录，官网链接：https://www.tianapi.com
 
