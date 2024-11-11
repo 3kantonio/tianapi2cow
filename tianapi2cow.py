@@ -10,7 +10,7 @@ from plugins import *
 import config
 
 @plugins.register(name="Tianapi2cow",
-                  desc="获取科技相关的最新资讯",
+                  desc="A plugin that acquire tech news from tianapi in Chinese",
                   version="1.0",
                   author="Antonio",
                   desire_priority=100)
